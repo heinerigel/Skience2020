@@ -1,0 +1,11 @@
+This jupyther-notebook will only run on a linux box with the following installed:
+gfortran
+gawk
+csh
+(csh is not critical and the login shell still should be bash)
+
+On a ubuntu box:
+sudo apt-get install build-essential gfortran gawk csh
+
+The notebook must be launched in the "pratical" directory:
+jupyter-notebook Homogenization.ipynb

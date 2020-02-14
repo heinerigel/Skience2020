@@ -1,0 +1,29 @@
+ ********>>>> source t0=   7.9577471545947662E-005
+ The acceleration time evolution scheme has been selected
+ lambda_min estimate:   7.4999999999999997E-003
+ -----Mesh information:
+ Number of elements:         200
+ cfl=   5.7557721548669622E-007
+ dxmin=   8.6336582323010003E-004
+ -----
+ Maximum advised time step:   4.6621754591650695E-007
+ Input time step:   4.9999999999999998E-008
+ Number of time step:       10001
+ Snapshot every :         200
+ The source is in element number:           60
+ Time step n:         1000   6.86890036E-02   6.53467579E-30
+ Time step n:         2000   5.18429987E-02   3.26453782E-15
+ Time step n:         3000   5.11020012E-02   2.27531340E-12
+ Time step n:         4000   5.06770015E-02   2.27531340E-12
+ Time step n:         5000   5.05379997E-02   2.27531340E-12
+ Time step n:         6000   5.04419990E-02   2.27535005E-12
+ Time step n:         7000   5.02730012E-02   2.27535005E-12
+ Time step n:         8000   5.03289998E-02   2.27535005E-12
+ Time step n:         9000   5.00719994E-02   2.27540339E-12
+ Time step n:        10000   5.01779988E-02   2.27540339E-12
+ Dumping traces
+           1
+           2
+           3
+           4
+ Newmark finished

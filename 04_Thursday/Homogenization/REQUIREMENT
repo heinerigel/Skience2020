@@ -1,0 +1,5 @@
+what packages are needed?
+
+- gfortran (sudo apt-get install gfortran)
+- awk (or gawk) (should be alread installed)
+- csh

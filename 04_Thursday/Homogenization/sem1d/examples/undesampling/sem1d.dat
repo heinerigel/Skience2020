@@ -1,0 +1,28 @@
+#model name
+model.dat
+#number og gll points (degree+1)
+6
+#fmax (maximum frequencyi, in Hz, used to design the mesh)
+7.
+#source location
+15000.
+#source central frequency f0:
+5.0
+#t0 shift
+.true.
+#time window
+10.
+#dt (-1: automatic)
+-1
+#snapshot dt
+0.5
+#receiver file
+receivers
+#time evolution scheme (1: acceleration, 2: velocity streess)
+1
+#abc?
+.false.
+#What homogeneization order (-1: none, 0, 1, or 2)
+-1
+
+

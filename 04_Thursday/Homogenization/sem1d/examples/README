@@ -1,0 +1,8 @@
+simple_test: test in a homogeneous bar.
+inhomogeneous: test in a inhomogeneous bar.
+ex_break_cfl: test breaking the cfl
+ex_ok_cfl: same test as the previous one, but cfl OK.
+undersampling: test undersampling the wavefield
+
+In each directory, the script makemovie.csh can help to make movies of the snaphots.
+You need GMT to be installed on your machine and run "csh makemovie.csh". The script just makes frame. You need to link them yourself

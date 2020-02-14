@@ -1,0 +1,97 @@
+This a little program to solve the 1D wave equation with spectral elements written by Yann Capdeville.
+This program is designed for student so that the case give a try and make 
+modifications themselves.
+So you are wellcome to modefy and make it better. Please send intersting addup to me (yann.capdeville@univ-nantes.fr).
+This is a beta poorly tested version.
+
+1-Compilation
+edit the makefile and choose either gfortran or intel fortran.
+then run "make"
+The compiled program ends up in the "bin" directory
+
+2-input files:
+Main file: sem1d.dat
+------------------------------------------
+#model name
+model.dat
+#number og gll points (degree+1)
+9
+#fmax (maximum frequency, in Hz, used to design the mesh)
+40.
+#source location
+1000.
+#source central frequency f0:
+16.
+#t0 shift
+.false.
+#time window
+2.
+#dt (-1: automatic)
+-1.
+#snapshot dt
+0.1
+#receiver file
+receivers
+#time evolution scheme (1: acceleration, 2: velocity stress)
+1
+#absorbing condition (Clayton & Engquist)?
+F
+#What homogeneization order (-1: none, 0, 1, or 2)
+1
+#corrector file:
+correctors
+---------------------------------------------
+explanations:
+-model name (see model format below)
+-ngll (number of gll points=sem degree+1). Usually Between 5 and 9.
+-fmax is the maximum frequency of the source. It doesn't need to be the real maximum 
+frequency of the source (it can be use to experiment oversampling or under-sampling 
+of the wavefield)
+-source location. Explicit
+-central frequency f0. The source is a Ricker (second derivative of a Gaussian). 
+ The maximum frequency is about 2.75*f0
+-t0 shift: the t0 time is set to 0 for the central time of the source wavelet (t0shift=.true.)
+         or to the time origine of the wavelet window (t0shift=.false.)
+-time window: simulation duration
+-dt=time step. Automatically computed if entry <0. In that case the t0 of simulation 
+is the t0 of the source wavelet. if not specify yourself the dt. In that case, the t0
+ of the simulation is given in the output.
+-snapshot dts: a snapshot of the displacement field is dumped on the drive every dts. No
+ snapshot if <0.
+-receiver file (see below)
+-time evolution scheme: you can choose between two type of time evolution scheme (1: acceleration, 2: velocity stress). 
+  This is for test only as both schemes should give almost the same results
+-abc: absorbing boundary conditions: simple Clayton & Engquist implimentation. 
+It appears my implementation of the condition decrease the cfl, which is a bit straange. Maybe I did something wrong.
+-homogeneization order. Is the model file an output of the homo1d homogeneization
+ program? If yes, specifies the order. If the order it 0, an oversampling of the mesh
+ will be performed to take into account the oscillations of the model.
+-corrector file: if the above switch is set to one, you need to provide the first order correctors
+
+3- model file
+the model is C0 by parts.  
+line 1: number of parts of the model
+line 2: position of the first interface and number of samples in the part
+line 3: position of the first sample, density, velocity
+line 4: position of the second sample, density, velocity
+.
+.
+.
+line n+2: position of the n sample, density, velocity
+line n+3: position of the second interface and number of samples in the part
+.
+.
+.
+
+4- receiver file
+line 1: number for receivers
+line 2: position of receiver 1
+.
+.
+.
+line n+1: position of receiver n
+
+5- outputs
+-source.gnu is the source wavelet (Ricker)
+-trace00n is the receiver n signal
+-snapshot00n is the snapshot for iteration n (at t=n*dts)
