@@ -1,0 +1,7 @@
+name: eq-source-location-hmc
+
+dependencies:
+  - python=3.7
+  - numpy
+  - matplotlib
+  - tqdm

@@ -736,6 +736,8 @@ def sample_hmc_opt(
         pbar.close()
         # Delete all non-written samples
         samples = samples[:, : math.ceil(i_sample / thinning) - 1]
+    except Exception as e:
+        raise e
     finally:
         return samples
     return samples
