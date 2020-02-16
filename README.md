@@ -9,7 +9,7 @@ Notebooks for Skience 2020
 
 ## ON WINDOWS:
 Problems have been reported for Windows machines. Try the following instead:
-"conda create -c conda-forge -n mess_2020 python=3.6 jupyter "numpy=1.17" scipy "matplotlib<2.2" cartopy obspy tqdm"
+"conda create -c conda-forge -n mess_2020 python=3.6 jupyter "numpy=1.13" scipy "matplotlib<2.2" cartopy obspy tqdm"
 
 or
 
